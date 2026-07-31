@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storefront</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <script defer src="store.js"></script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-black">
+
+    <!-- Header -->
+    <header class="bg-black shadow-xs shadow-amber-50">
+        <div class="container mx-auto px-4 py-5">
+            <h1 class="text-2xl text-amber-50 font-bold">
+                ShopSphere
+            </h1>
+        </div>
+    </header>
+
+    <main class="flex-1 container mx-auto px-4 py-8">
+
+        <div class="space-y-8">
+
+            <!-- Page Header -->
+            <div>
+                <h2 class="text-3xl text-amber-50 font-bold mb-2">
+                    Our Products
+                </h2>
+
+                <p class="text-gray-500" id="productCount">
+                    Discover our curated collection
+                </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="text-gray-300">
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder= "Search products..."
+                    class="border border-gray-600 rounded-lg px-4 py-2 w-full"
+                >
+            </div>
+            <div class="grid md:grid-cols-2 text-gray-300 gap-4">
+                
+                <select
+                    id="categorySelect"
+                    class="border border-gray-600 rounded-lg px-4 py-2 bg-black"
+                >
+                    <option value="">All Categories</option>
+                </select>
+
+                <select
+                    id="sortSelect"
+                    placeholder="sortby"
+                    class="border border-gray-600 rounded-lg px-4 py-2 bg-black "
+
+                >
+                    <option value="">Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+
+            </div>
+
+            <!-- Results Count -->
+            <p
+                id="resultsText"
+                class="text-sm text-gray-500"
+            ></p>
+
+            <!-- Product Grid -->
+           <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <p class="col-span-full text-center text-gray-500 py-10">Loading products...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div
+                id="emptyState"
+                class="hidden flex flex-col items-center justify-center py-16 text-center"
+            >
+                <p class="text-lg font-semibold">
+                    No products found
+                </p>
+
+                <p class="text-gray-500">
+                    Try adjusting your search or filter criteria
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
